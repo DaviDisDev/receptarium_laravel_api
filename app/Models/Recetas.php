@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\CategoriasRecetas;
 
 class Recetas extends Model
 {
@@ -12,6 +13,7 @@ class Recetas extends Model
         'titulo',
         'ingredientes',
         'tiempo_preparacion',
+        'num_personas',
         'descripcion',
         'rutaImagenPrincipal',
         'categoria_id',
@@ -21,5 +23,9 @@ class Recetas extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+    public function categoria()
+    {
+        return $this->belongsTo(CategoriasRecetas::class, 'categoria_id');
     }
 }

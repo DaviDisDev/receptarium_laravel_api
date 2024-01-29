@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('pasos_recetas', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->text('titulo');
             $table->text('descripcion');
-            $table->text('ruta_imagen')->nullable(); // Permite que ruta_imagen sea nullable
-            $table->text('tiempo_paso')->nullable(); // Permite que tiempo_paso sea nullable
+            $table->text('ruta_imagen')->nullable();
             $table->unsignedBigInteger('receta_id');
             $table->foreign('receta_id')->references('id')->on('recetas')->onDelete('cascade');
         });

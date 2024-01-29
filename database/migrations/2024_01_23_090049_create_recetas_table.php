@@ -15,9 +15,10 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('titulo');
-            $table->text('ingredientes')->nullable();
-            $table->float('tiempo_preparacion')->nullable();
-            $table->text('descripcion')->nullable();
+            $table->text('ingredientes');
+            $table->integer('num_personas');
+            $table->string('tiempo_preparacion');
+            $table->text('descripcion');
             $table->text('rutaImagenPrincipal')->nullable();
             $table->unsignedBigInteger('user_id');
         });
