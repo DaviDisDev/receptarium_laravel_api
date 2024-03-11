@@ -15,6 +15,7 @@ Route::post('registerOrLogin', [AuthController::class, 'registerOrLogin']);
 Route::middleware(['auth:sanctum'])->group(function () {
 
     Route::post('logout', [AuthController::class, 'logout']);
+
     Route::get('recetas', [RecetasController::class, 'index']);
 
     Route::get('ver-receta/{receta}', [RecetasController::class, 'showReceta']);
@@ -26,7 +27,6 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::put('/editar-paso/{paso}', [RecetasController::class, 'editarPaso']);
 
     Route::post('crear-pasos/{receta}', [RecetasController::class, 'crearPasos']);
-
 
     Route::delete('/recetas/{recetas}', [RecetasController::class, 'destroy']);
 
